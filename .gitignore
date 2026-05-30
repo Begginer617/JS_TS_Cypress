@@ -1,0 +1,17 @@
+# Node
+node_modules/
+
+# Cypress artifacts
+cypress/screenshots/
+cypress/videos/
+cypress/reports/
+cypress/node_modules/
+
+# Build outputs
+dist/
+build/
+coverage/
+logs/
+
+# System files
+.DS_Store
