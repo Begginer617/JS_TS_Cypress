@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  projectId: 'pvx3v3',
+  projectId: '9htb64',
   allowCypressEnv: false,
 
   video: true,
