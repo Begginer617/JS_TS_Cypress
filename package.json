@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "cypress.config.dev.js",
-  "scripts": {
-    "test": "cypress open"
+   "scripts": {
+    "test": "cypress open",
+    "cy:run": "npx cypress run", 
+    "cy:run-cloud": "npx cypress run --record --key 30de5d61-f27d-45c3-af80-3ee10e6e9192",
+    "mytests": "npx cypress run --spec 'cypress/e2e/01test.cy.js'"
   },
   "keywords": [],
   "author": "",

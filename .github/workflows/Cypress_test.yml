@@ -1,33 +1,16 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
-
-name: Node.js Package
-
-on:
-  release:
-    types: [created]
+name: Cypress_test
+on: [push, workflow_dispatch]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  cypress:
+    runs-on: ubuntu-latest # uruchamia na najnowszym ubuntu uwaga w chmurze !!! nie musisz go miec
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v4 # krok 1 zrob checkout z repo z ktorego bierzesz kod
+      - uses: actions/setup-node@v4 # krok 2 zainstaluj srodowisko nodejs
         with:
-          node-version: 20
-      - run: npm ci
-      - run: npm test
+          node-version: '24' # sami okreslamy
+          cache: npm
 
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      - run: npm ci # uruchom skrypty npm w srodowisku ciaglej integracji
+      - run: npx cypress run
+      # run: npm run mytests
