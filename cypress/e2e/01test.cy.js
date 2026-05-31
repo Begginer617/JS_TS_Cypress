@@ -4,7 +4,7 @@ Cypress.config().waitForAnimations = true;
 import { parametersAccountManager, URLs } from "../fixtures/parameters.js";
 import "cypress-mochawesome-reporter/register";
 
-describe("Web form verification", () => {
+describe("Web form verification", { testIsolation: false }, () => {
   it("should open web app", () => {
     cy.visit(parametersAccountManager.formURL);
   });
@@ -24,29 +24,26 @@ describe("Web form verification", () => {
       parametersAccountManager.testedLogin,
       parametersAccountManager.testedPassword,
       parametersAccountManager.setUpAccountButton,
-      URLs.registerURL
+      URLs.registerURL,
     );
   });
 
   //x- sparwa ze sie pomija dany test lub grupę testów, it.skip() lub describe.skip()
-  xit("should login to app", () => {
+  it("should login to app", () => {
     cy.loginToApp(
       parametersAccountManager.testedLogin,
       parametersAccountManager.testedPassword,
       parametersAccountManager.buttonText,
-      URLs.loginURL
+      URLs.loginURL,
     );
     cy.verifyLoggedUser(
       parametersAccountManager.testedLogin,
       parametersAccountManager.logOutButton,
-      URLs.loggedURL
+      URLs.loggedURL,
     );
   });
 
-  it("should log out", () => {
+  xit("should log out", () => {
     //  cy.logoutFromApp()
   });
 });
-
-
-
