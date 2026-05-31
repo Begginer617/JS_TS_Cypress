@@ -2,7 +2,7 @@ export const parametersAccountManager = {
   role: "Account Manager",
   subtitleMainPage: "Zaloguj się do naszego super bezpiecznego systemu!",
   subtitleRegisterPage: "Załóż konto w naszym systemie!",
-  formURL: "https://frontendpodyplomowe.github.io/logging",
+  formURL: "https://frontendpodyplomowe.github.io/logginggg",
   linkText: "Zarejestruj się!",
   buttonText: "Zaloguj się!",
   backToLoginText: "Wróć do logowania!",
