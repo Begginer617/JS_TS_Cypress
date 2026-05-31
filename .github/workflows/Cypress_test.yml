@@ -5,8 +5,8 @@ jobs:
   cypress:
     runs-on: ubuntu-latest # uruchamia na najnowszym ubuntu uwaga w chmurze !!! nie musisz go miec
     steps:
-      - uses: actions/checkout@v4 # krok 1 zrob checkout z repo z ktorego bierzesz kod
-      - uses: actions/setup-node@v4 # krok 2 zainstaluj srodowisko nodejs
+      - uses: actions/checkout@v6 # krok 1 zrob checkout z repo z ktorego bierzesz kod
+      - uses: actions/setup-node@v6 # krok 2 zainstaluj srodowisko nodejs
         with:
           node-version: '24' # sami okreslamy
           cache: npm

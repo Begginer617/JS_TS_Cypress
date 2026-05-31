@@ -41,6 +41,14 @@ describe("Web form verification", { testIsolation: false }, () => {
       parametersAccountManager.logOutButton,
       URLs.loggedURL,
     );
+    it("should check UI of logged page", () => {
+      cy.verifyFormUI(
+        parametersAccountManager.role,
+        parametersAccountManager.subtitleLoggedPage,
+        parametersAccountManager.buttonText,
+        parametersAccountManager.linkText,
+      );
+    });
   });
 
   xit("should log out", () => {
