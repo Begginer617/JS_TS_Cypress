@@ -2,6 +2,7 @@
 Cypress.config().waitForAnimations = true;
 
 import { parametersAccountManager, URLs } from "../fixtures/parameters.js";
+import "cypress-mochawesome-reporter/register";
 
 describe("Web form verification", () => {
   it("should open web app", () => {
@@ -27,7 +28,8 @@ describe("Web form verification", () => {
     );
   });
 
-  it("should login to app", () => {
+  //x- sparwa ze sie pomija dany test lub grupę testów, it.skip() lub describe.skip()
+  xit("should login to app", () => {
     cy.loginToApp(
       parametersAccountManager.testedLogin,
       parametersAccountManager.testedPassword,
@@ -45,3 +47,6 @@ describe("Web form verification", () => {
     //  cy.logoutFromApp()
   });
 });
+
+
+
