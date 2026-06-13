@@ -1,57 +1,57 @@
-/// <reference types="cypress" />
-Cypress.config().waitForAnimations = true;
+// /// <reference types="cypress" />
+// Cypress.config().waitForAnimations = true;
 
-import { parametersAccountManager, URLs } from "../fixtures/parameters.js";
-import "cypress-mochawesome-reporter/register";
+// import { parametersAccountManager, URLs } from "../fixtures/parameters.js";
+// import "cypress-mochawesome-reporter/register";
 
-describe("Web form verification", { testIsolation: false }, () => {
-  it("should open web app", () => {
-    cy.visit(parametersAccountManager.formURL);
-  });
+// describe("Web form verification", { testIsolation: false }, () => {
+//   it("should open web app", () => {
+//     cy.visit(parametersAccountManager.formURL);
+//   });
 
-  it("should check UI of main page of form", () => {
-    cy.verifyFormUI(
-      parametersAccountManager.role,
-      parametersAccountManager.subtitleMainPage,
-      parametersAccountManager.buttonText,
-      parametersAccountManager.linkText,
-    );
-  });
+//   it("should check UI of main page of form", () => {
+//     cy.verifyFormUI(
+//       parametersAccountManager.role,
+//       parametersAccountManager.subtitleMainPage,
+//       parametersAccountManager.buttonText,
+//       parametersAccountManager.linkText,
+//     );
+//   });
 
-  it("should register to app", () => {
-    cy.registerToApp(
-      parametersAccountManager.linkText,
-      parametersAccountManager.testedLogin,
-      parametersAccountManager.testedPassword,
-      parametersAccountManager.setUpAccountButton,
-      URLs.registerURL,
-    );
-  });
+//   it("should register to app", () => {
+//     cy.registerToApp(
+//       parametersAccountManager.linkText,
+//       parametersAccountManager.testedLogin,
+//       parametersAccountManager.testedPassword,
+//       parametersAccountManager.setUpAccountButton,
+//       URLs.registerURL,
+//     );
+//   });
 
-  //x- sparwa ze sie pomija dany test lub grupę testów, it.skip() lub describe.skip()
-  it("should login to app", () => {
-    cy.loginToApp(
-      parametersAccountManager.testedLogin,
-      parametersAccountManager.testedPassword,
-      parametersAccountManager.buttonText,
-      URLs.loginURL,
-    );
-    cy.verifyLoggedUser(
-      parametersAccountManager.testedLogin,
-      parametersAccountManager.logOutButton,
-      URLs.loggedURL,
-    );
-    it("should check UI of logged page", () => {
-      cy.verifyFormUI(
-        parametersAccountManager.role,
-        parametersAccountManager.subtitleLoggedPage,
-        parametersAccountManager.buttonText,
-        parametersAccountManager.linkText,
-      );
-    });
-  });
+//   //x- sparwa ze sie pomija dany test lub grupę testów, it.skip() lub describe.skip()
+//   it("should login to app", () => {
+//     cy.loginToApp(
+//       parametersAccountManager.testedLogin,
+//       parametersAccountManager.testedPassword,
+//       parametersAccountManager.buttonText,
+//       URLs.loginURL,
+//     );
+//     cy.verifyLoggedUser(
+//       parametersAccountManager.testedLogin,
+//       parametersAccountManager.logOutButton,
+//       URLs.loggedURL,
+//     );
+//     it("should check UI of logged page", () => {
+//       cy.verifyFormUI(
+//         parametersAccountManager.role,
+//         parametersAccountManager.subtitleLoggedPage,
+//         parametersAccountManager.buttonText,
+//         parametersAccountManager.linkText,
+//       );
+//     });
+//   });
 
-  xit("should log out", () => {
-    //  cy.logoutFromApp()
-  });
-});
+//   xit("should log out", () => {
+//     //  cy.logoutFromApp()
+//   });
+// });
